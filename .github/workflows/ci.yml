@@ -36,38 +36,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Biome check and auto-fix
-        run: |
-          echo "Running Biome checks and applying auto-fixes..."
-          npm run lint:fix
-          
-          # Check if any files were modified
-          if ! git diff --quiet; then
-            echo "✓ Biome auto-fixes applied"
-            git status --porcelain
-          else
-            echo "✓ No fixes needed"
-          fi
-
-      - name: Commit Biome fixes
-        if: github.event_name == 'push'
-        run: |
-          # Configure git
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          
-          # Check if there are changes to commit
-          if ! git diff --quiet; then
-            echo "Committing Biome auto-fixes..."
-            git add .
-            git commit -m "style: apply Biome auto-fixes" -m "Auto-applied by GitHub Actions" -m "[skip ci]"
-            git push
-            echo "✓ Biome fixes committed and pushed"
-          else
-            echo "✓ No changes to commit"
-          fi
-
-      - name: Run final Biome check
+      - name: Run Biome check
         run: npm run lint
 
       - name: Check TypeScript
@@ -124,44 +93,13 @@ jobs:
           path: coverage/
           retention-days: 30
 
-      - name: Update README Coverage Badge
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      - name: Generate Coverage Report Summary
         run: |
-          # Extract coverage percentage
+          # Extract coverage percentage for reporting
           COVERAGE=$(cat coverage/coverage-summary.json | jq -r '.total.statements.pct')
           
-          # Determine badge color based on coverage
-          if (( $(echo "$COVERAGE >= 90" | bc -l) )); then
-            COLOR="brightgreen"
-          elif (( $(echo "$COVERAGE >= 80" | bc -l) )); then
-            COLOR="yellow"
-          elif (( $(echo "$COVERAGE >= 70" | bc -l) )); then
-            COLOR="orange"
-          else
-            COLOR="red"
-          fi
-          
-          # Update README with new coverage badge
-          sed -i "s/coverage-[0-9.]*%25-[a-z]*/coverage-${COVERAGE}%25-${COLOR}/" README.md
-          
-          echo "Updated coverage badge to ${COVERAGE}% (${COLOR})"
-
-      - name: Commit Updated Coverage Badge
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          # Configure git
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          
-          # Check if README was actually changed
-          if git diff --quiet README.md; then
-            echo "No changes to README coverage badge"
-          else
-            # Add and commit the changes
-            git add README.md
-            git commit -m "docs: update coverage badge to $(cat coverage/coverage-summary.json | jq -r '.total.statements.pct')%" -m "Auto-updated by GitHub Actions after successful test run" -m "[skip ci]"
-            git push
-          fi
+          echo "📊 Coverage Summary: ${COVERAGE}%"
+          echo "coverage-percentage=${COVERAGE}" >> $GITHUB_OUTPUT
 
 
       - name: Validate Coverage Thresholds
