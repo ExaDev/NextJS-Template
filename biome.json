@@ -7,7 +7,15 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["node_modules", ".next", "out", "dist", "coverage", "*.d.ts"]
+		"ignore": [
+			"node_modules",
+			".next",
+			"out",
+			"dist",
+			"coverage",
+			"*.d.ts",
+			"public/mockServiceWorker.js"
+		]
 	},
 	"formatter": {
 		"enabled": true,
