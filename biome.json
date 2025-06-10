@@ -14,7 +14,8 @@
 			"dist",
 			"coverage",
 			"*.d.ts",
-			"public/mockServiceWorker.js"
+			"public/mockServiceWorker.js",
+			"package-lock.json"
 		]
 	},
 	"formatter": {
