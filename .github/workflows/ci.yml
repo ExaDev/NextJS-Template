@@ -299,6 +299,19 @@ Auto-updated by GitHub Actions after successful test run
           
           npm run build
 
+      - name: Build Storybook
+        run: |
+          echo "Building Storybook for documentation..."
+          npm run build-storybook
+          
+          if [ -d "storybook-static" ]; then
+            echo "✓ Storybook build successful - 'storybook-static' directory created"
+            ls -la storybook-static/
+          else
+            echo "✗ Storybook build failed - 'storybook-static' directory not found"
+            exit 1
+          fi
+
       - name: Test static export
         run: |
           if [ -d "out" ]; then
@@ -314,6 +327,13 @@ Auto-updated by GitHub Actions after successful test run
         with:
           name: build-output
           path: out/
+          retention-days: 7
+
+      - name: Upload Storybook artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-output
+          path: storybook-static/
           retention-days: 7
 
   deploy:
