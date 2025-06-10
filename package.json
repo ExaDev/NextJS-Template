@@ -68,6 +68,6 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": ["biome check --write", "vitest related --run"],
-    "*.{json,md}": ["biome format --write"]
+    "*.{json,md,yml,yaml}": ["biome format --write --files-ignore-unknown=true"]
   }
 }
