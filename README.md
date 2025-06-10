@@ -82,7 +82,8 @@ ReactJS developers and learners, providing a focused scope for initial validatio
 
 ### Platform Technology
 - **Frontend Framework**: Next.js in static export mode for optimal performance and deployment flexibility
-- **Deployment Strategy**: Static site generation enabling CDN distribution and serverless architecture
+- **Deployment Strategy**: Automatic GitHub Pages deployment with CDN distribution and static hosting
+- **CI/CD Pipeline**: Comprehensive GitHub Actions workflow with automated testing, building, and deployment
 - **Client-Side State Management**: React-based state handling for assessment flows and user progress
 - **LLM Strategy**: Multi-provider architecture with initial focus on in-browser LLM execution for privacy and offline capabilities
 
@@ -156,6 +157,32 @@ Based on proven concepts in adaptive learning and personalised education, with i
 - Strong focus on MVP validation before expansion
 - Partnership opportunities with educational institutions
 - Clear differentiation through personalisation capabilities
+
+## Deployment
+
+### Automatic Deployment
+The application is automatically deployed to GitHub Pages on every push to the main branch:
+
+1. **Quality Gates**: All tests, linting, security audits, and builds must pass
+2. **Static Export**: Next.js generates optimized static files for deployment
+3. **GitHub Pages**: Automatic deployment using GitHub Actions with custom domain support
+4. **CDN Distribution**: Global content delivery through GitHub's infrastructure
+
+### Manual Deployment
+For local testing of the production build:
+```bash
+npm run build    # Generate static export
+npx serve out    # Serve locally on http://localhost:3000
+```
+
+### Development Workflow
+```bash
+npm run dev      # Development server
+npm test         # Run tests
+npm run coverage # Generate coverage report
+npm run lint     # Check code quality
+npm run build    # Production build
+```
 
 ## Conclusion
 
