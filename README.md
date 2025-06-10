@@ -1,5 +1,7 @@
 # BrainPatch Product Vision
 
+![Coverage](https://img.shields.io/badge/coverage-84.21%25-yellow.svg)
+
 ## Overview
 
 BrainPatch is an intelligent, LLM-powered learning platform that creates personalised courses based on individual knowledge gaps and learning needs. By leveraging advanced assessment techniques and adaptive content generation, BrainPatch bridges the gap between where learners are and where they want to be.

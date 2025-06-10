@@ -68,9 +68,6 @@
 		}
 	},
 	"lint-staged": {
-		"*": [
-			"biome format --write --files-ignore-unknown=true",
-			"biome check --write --files-ignore-unknown=true"
-		]
+		"*.{js,jsx,ts,tsx,json}": ["biome format --write", "biome check --write"]
 	}
 }
