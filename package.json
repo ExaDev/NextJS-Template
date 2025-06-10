@@ -24,7 +24,9 @@
 		"audit:fix": "npm audit fix",
 		"audit:prod": "npm audit --omit=dev",
 		"audit:ci": "npm audit --audit-level=moderate",
-		"security:check": "npm audit --omit=dev --audit-level=high"
+		"security:check": "npm audit --omit=dev --audit-level=high",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
 	},
 	"dependencies": {
 		"@mlc-ai/web-llm": "^0.2.79",
@@ -40,6 +42,9 @@
 		"@commitlint/config-conventional": "^19.8.1",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/git": "^10.0.1",
+		"@storybook/addon-docs": "^9.0.6",
+		"@storybook/addon-onboarding": "^9.0.6",
+		"@storybook/nextjs": "^9.0.6",
 		"@testing-library/dom": "^10.4.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.3.0",
@@ -60,6 +65,7 @@
 		"msw": "^2.10.2",
 		"postcss": "^8",
 		"semantic-release": "^24.2.5",
+		"storybook": "^9.0.6",
 		"tailwindcss": "^4.1.8",
 		"typescript": "^5",
 		"vitest": "^3.2.3"

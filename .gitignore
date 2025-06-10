@@ -38,3 +38,5 @@ next-env.d.ts
 # Claude Code local memory (never commit)
 .claude/
 CLAUDE.md
+*storybook.log
+storybook-static
