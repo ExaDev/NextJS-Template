@@ -60,10 +60,9 @@ jobs:
           if ! git diff --quiet; then
             echo "Committing Biome auto-fixes..."
             git add .
-            git commit -m "style: apply Biome auto-fixes
-
-Auto-applied by GitHub Actions
-[skip ci]"
+            git commit -m "style: apply Biome auto-fixes" \
+                       -m "Auto-applied by GitHub Actions" \
+                       -m "[skip ci]"
             git push
             echo "✓ Biome fixes committed and pushed"
           else
@@ -162,10 +161,9 @@ Auto-applied by GitHub Actions
           else
             # Add and commit the changes
             git add README.md
-            git commit -m "docs: update coverage badge to $(cat coverage/coverage-summary.json | jq -r '.total.statements.pct')%
-
-Auto-updated by GitHub Actions after successful test run
-[skip ci]"
+            git commit -m "docs: update coverage badge to $(cat coverage/coverage-summary.json | jq -r '.total.statements.pct')%" \
+                       -m "Auto-updated by GitHub Actions after successful test run" \
+                       -m "[skip ci]"
             git push
           fi
 
