@@ -18,7 +18,12 @@
     "release": "semantic-release",
     "release:dry": "semantic-release --dry-run",
     "prepare": "husky",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "audit": "npm audit",
+    "audit:fix": "npm audit fix",
+    "audit:prod": "npm audit --omit=dev",
+    "audit:ci": "npm audit --audit-level=moderate",
+    "security:check": "npm audit --omit=dev --audit-level=high"
   },
   "dependencies": {
     "@mlc-ai/web-llm": "^0.2.46",
