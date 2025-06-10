@@ -276,7 +276,28 @@ Auto-updated by GitHub Actions after successful test run
         run: npm ci
 
       - name: Build application
-        run: npm run build
+        env:
+          NEXT_PUBLIC_COMMIT_HASH: ${{ github.sha }}
+          NEXT_PUBLIC_BUILD_TIME: ${{ github.event.head_commit.timestamp }}
+          NEXT_PUBLIC_BRANCH: ${{ github.ref_name }}
+        run: |
+          # Get version from package.json
+          VERSION=$(node -p "require('./package.json').version")
+          
+          # Add branch suffix for non-main branches
+          if [ "${{ github.ref_name }}" != "main" ]; then
+            export NEXT_PUBLIC_APP_VERSION="${VERSION}-${{ github.ref_name }}"
+          else
+            export NEXT_PUBLIC_APP_VERSION="${VERSION}"
+          fi
+          
+          echo "Building with version info:"
+          echo "  Version: $NEXT_PUBLIC_APP_VERSION"
+          echo "  Commit: $NEXT_PUBLIC_COMMIT_HASH"
+          echo "  Build Time: $NEXT_PUBLIC_BUILD_TIME"
+          echo "  Branch: $NEXT_PUBLIC_BRANCH"
+          
+          npm run build
 
       - name: Test static export
         run: |
