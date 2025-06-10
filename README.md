@@ -78,10 +78,15 @@ ReactJS developers and learners, providing a focused scope for initial validatio
 
 ## Technical Architecture Considerations
 
+### Platform Technology
+- **Frontend Framework**: Next.js in static export mode for optimal performance and deployment flexibility
+- **Deployment Strategy**: Static site generation enabling CDN distribution and serverless architecture
+- **Client-Side State Management**: React-based state handling for assessment flows and user progress
+
 ### Core Components
 - Knowledge assessment engine with adaptive questioning
 - LLM integration for course generation and content creation
-- User progress tracking and analytics
+- User progress tracking and analytics (client-side storage with optional cloud sync)
 - Content delivery and management system
 
 ### Scalability Requirements
@@ -89,6 +94,7 @@ ReactJS developers and learners, providing a focused scope for initial validatio
 - Efficient LLM usage optimisation
 - Real-time assessment and course adjustment capabilities
 - Multi-user concurrent assessment and learning
+- Static export compatibility for edge deployment and offline capabilities
 
 ## Roadmap Vision
 
