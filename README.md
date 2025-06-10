@@ -82,19 +82,28 @@ ReactJS developers and learners, providing a focused scope for initial validatio
 - **Frontend Framework**: Next.js in static export mode for optimal performance and deployment flexibility
 - **Deployment Strategy**: Static site generation enabling CDN distribution and serverless architecture
 - **Client-Side State Management**: React-based state handling for assessment flows and user progress
+- **LLM Strategy**: Multi-provider architecture with initial focus on in-browser LLM execution for privacy and offline capabilities
+
+### LLM Provider Architecture
+- **Initial Implementation**: In-browser LLM execution using WebAssembly/WebGPU for local processing
+- **Multi-Provider Support**: Extensible architecture supporting cloud-based providers (OpenAI, Anthropic, etc.)
+- **Privacy-First Approach**: Local processing ensures user data never leaves the device initially
+- **Fallback Strategy**: Graceful degradation from local to cloud providers based on user preference and device capabilities
 
 ### Core Components
 - Knowledge assessment engine with adaptive questioning
-- LLM integration for course generation and content creation
+- Multi-provider LLM integration layer for course generation and content creation
 - User progress tracking and analytics (client-side storage with optional cloud sync)
 - Content delivery and management system
 
 ### Scalability Requirements
 - Support for multiple subject domains beyond ReactJS
-- Efficient LLM usage optimisation
+- Efficient LLM usage optimisation across local and cloud providers
 - Real-time assessment and course adjustment capabilities
 - Multi-user concurrent assessment and learning
 - Static export compatibility for edge deployment and offline capabilities
+- Browser-based LLM performance optimisation for resource-constrained devices
+- Seamless provider switching based on performance and availability
 
 ## Roadmap Vision
 
@@ -129,8 +138,10 @@ Based on proven concepts in adaptive learning and personalised education, with i
 ## Risk Mitigation
 
 ### Technical Risks
-- LLM accuracy and consistency in assessment and course generation
-- Scalability of personalised content creation
+- In-browser LLM performance limitations on lower-end devices
+- LLM accuracy and consistency across different providers (local vs cloud)
+- Scalability of personalised content creation with resource constraints
+- Browser compatibility for WebAssembly/WebGPU LLM execution
 - Integration complexity with learning management systems
 
 ### Market Risks
