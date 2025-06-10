@@ -82,12 +82,13 @@ export function generateId(): string {
  * Check if browser supports WebGPU for LLM acceleration
  */
 export async function checkWebGPUSupport(): Promise<boolean> {
-  if (typeof navigator === 'undefined' || !navigator.gpu) {
+  if (typeof navigator === 'undefined' || !('gpu' in navigator)) {
     return false;
   }
 
   try {
-    const adapter = await navigator.gpu.requestAdapter();
+    const gpu = (navigator as any).gpu;
+    const adapter = await gpu.requestAdapter();
     return adapter !== null;
   } catch {
     return false;
