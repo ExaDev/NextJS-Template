@@ -10,7 +10,7 @@ const nextConfig = {
 	},
 
 	// WebAssembly and LLM support
-	webpack: (config: any) => {
+	webpack: (config: { experiments?: object; resolve?: { fallback?: object } }) => {
 		// Enable WebAssembly support
 		config.experiments = {
 			...config.experiments,
@@ -18,6 +18,7 @@ const nextConfig = {
 		};
 
 		// Required for WebLLM browser compatibility
+		config.resolve = config.resolve || {};
 		config.resolve.fallback = {
 			...config.resolve.fallback,
 			fs: false,

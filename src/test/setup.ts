@@ -1,4 +1,6 @@
 import '@testing-library/jest-dom';
+import { vi } from 'vitest';
+import './msw-setup';
 
 // Mock IntersectionObserver for tests
 global.IntersectionObserver = class IntersectionObserver {

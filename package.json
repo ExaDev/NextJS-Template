@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
+		"msw:init": "msw init public/ --save",
 		"build": "next build",
 		"start": "next start",
 		"test": "vitest",
@@ -56,6 +57,7 @@
 		"husky": "^9.1.7",
 		"jsdom": "^26.1.0",
 		"lint-staged": "^16.1.0",
+		"msw": "^2.10.2",
 		"postcss": "^8",
 		"semantic-release": "^24.2.5",
 		"tailwindcss": "^4.1.8",
@@ -69,5 +71,8 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx,json}": ["biome format --write", "biome check --write"]
+	},
+	"msw": {
+		"workerDirectory": ["public"]
 	}
 }
