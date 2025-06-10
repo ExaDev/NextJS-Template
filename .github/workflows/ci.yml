@@ -23,6 +23,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -33,7 +36,41 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Biome check
+      - name: Run Biome check and auto-fix
+        run: |
+          echo "Running Biome checks and applying auto-fixes..."
+          npm run lint:fix
+          
+          # Check if any files were modified
+          if ! git diff --quiet; then
+            echo "✓ Biome auto-fixes applied"
+            git status --porcelain
+          else
+            echo "✓ No fixes needed"
+          fi
+
+      - name: Commit Biome fixes
+        if: github.event_name == 'push'
+        run: |
+          # Configure git
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if there are changes to commit
+          if ! git diff --quiet; then
+            echo "Committing Biome auto-fixes..."
+            git add .
+            git commit -m "style: apply Biome auto-fixes
+
+Auto-applied by GitHub Actions
+[skip ci]"
+            git push
+            echo "✓ Biome fixes committed and pushed"
+          else
+            echo "✓ No changes to commit"
+          fi
+
+      - name: Run final Biome check
         run: npm run lint
 
       - name: Check TypeScript
@@ -116,8 +153,8 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           # Configure git
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           
           # Check if README was actually changed
           if git diff --quiet README.md; then
