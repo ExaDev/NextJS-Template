@@ -14,9 +14,9 @@ describe('Home Page', () => {
 	it('displays the main description', () => {
 		render(<Home />);
 
-		// Look for the description paragraph
-		const description = screen.getByRole('paragraph');
-		expect(description).toBeInTheDocument();
+		// Look for multiple paragraphs to verify content is present
+		const paragraphs = screen.getAllByRole('paragraph');
+		expect(paragraphs.length).toBeGreaterThan(0);
 	});
 
 	it('shows the four main feature cards', () => {
