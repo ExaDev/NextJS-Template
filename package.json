@@ -1,7 +1,14 @@
 {
-	"name": "brain-patch",
+	"name": "{{PROJECT_NAME}}",
 	"version": "0.1.0",
 	"private": true,
+	"description": "{{PROJECT_DESCRIPTION}}",
+	"repository": {
+		"type": "git",
+		"url": "{{REPOSITORY_URL}}"
+	},
+	"author": "{{AUTHOR_NAME}} <{{AUTHOR_EMAIL}}>",
+	"license": "{{LICENSE}}",
 	"scripts": {
 		"dev": "next dev",
 		"msw:init": "msw init public/ --save",
