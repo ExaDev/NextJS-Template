@@ -1,191 +1,274 @@
-# BrainPatch Product Vision
+# {{PROJECT_NAME}} - Next.js Template
 
 ![Coverage](https://img.shields.io/badge/coverage-84.21%25-yellow.svg)
 
 ## Overview
 
-BrainPatch is an intelligent, LLM-powered learning platform that creates personalised courses based on individual knowledge gaps and learning needs. By leveraging advanced assessment techniques and adaptive content generation, BrainPatch bridges the gap between where learners are and where they want to be.
+This is a production-ready Next.js template featuring a comprehensive development environment with modern tooling, testing infrastructure, and CI/CD pipeline. Perfect for building static-export applications with built-in LLM integration capabilities.
 
-## Problem Statement
+## 🚀 Quick Start
 
-Traditional learning platforms use a one-size-fits-all approach that doesn't account for individual knowledge levels or learning gaps. Learners often:
-- Waste time on concepts they already understand
-- Miss foundational knowledge that prevents deeper understanding
-- Lack personalised pathways that adapt to their specific needs
-- Face generic courses that don't align with their current competency level
+### 1. Use This Template
+Click "Use this template" button on GitHub or clone the repository:
+```bash
+git clone {{REPOSITORY_URL}}
+cd {{PROJECT_NAME}}
+```
 
-## Solution
+### 2. Customize Your Project
+Run the setup script to replace template placeholders:
+```bash
+npm run setup
+```
 
-BrainPatch employs intelligent assessment and adaptive course generation to create truly personalised learning experiences:
+This will prompt you for:
+- Project name
+- Project description
+- Author information
+- Repository URL
+- App name and descriptions
+- Feature descriptions
 
-1. **Dynamic Knowledge Assessment**: Multi-layered evaluation system that quickly identifies knowledge gaps
-2. **Intelligent Course Construction**: LLM-powered curriculum generation tailored to individual needs
-3. **Adaptive Learning Modules**: Content that adjusts based on real-time performance and understanding
-4. **Targeted Gap Filling**: Focus on areas where learners need the most improvement
+### 3. Install Dependencies
+```bash
+npm install
+```
 
-## Core Features
+### 4. Start Development
+```bash
+npm run dev
+```
 
-### Initial Assessment Engine
-- Rapid, high-level multiple-choice questionnaires
-- Smart question selection based on previous responses
-- Comprehensive knowledge mapping across topic domains
-- Efficient evaluation that respects user time
+Open [http://localhost:3000](http://localhost:3000) to see your application.
 
-### Personalised Course Generation
-- LLM-driven curriculum creation based on assessment results
-- Dynamic topic selection focusing on knowledge gaps
-- Modular course structure allowing for flexible learning paths
-- Real-time course adjustment based on progress
+## 🎯 Features
 
-### Adaptive Learning Modules
-- In-depth assessment within each course module
-- Content difficulty adjustment based on user responses
-- Progressive revelation of concepts building on confirmed knowledge
-- Continuous refinement of learning path
+### ✅ Modern Development Stack
+- **Next.js 15** with App Router and TypeScript
+- **React 19** with latest features
+- **Tailwind CSS v4** for styling
+- **Static Export** ready for deployment
 
-## Target Market
+### ✅ Comprehensive Testing
+- **Vitest** for unit testing
+- **MSW** for API mocking
+- **React Testing Library** for component testing
+- **Coverage reporting** with thresholds
 
-### Primary Users
-- Software developers seeking to improve specific technical skills
-- Career changers transitioning into technology roles
-- Students supplementing formal education
-- Professionals requiring upskilling in new technologies
+### ✅ Code Quality Tools
+- **Biome** for linting and formatting
+- **TypeScript** strict mode
+- **Husky** git hooks
+- **Conventional commits** with Commitizen
 
-### Initial Focus (MVP)
-ReactJS developers and learners, providing a focused scope for initial validation and iteration.
+### ✅ CI/CD Pipeline
+- **GitHub Actions** workflow
+- **Semantic Release** for versioning
+- **Automated deployment** to GitHub Pages
+- **Security audits** and quality gates
 
-## Unique Value Proposition
+### ✅ LLM Integration Ready
+- **WebAssembly** support configured
+- **Multi-provider** architecture
+- **Privacy-first** approach with local processing
+- **Mock APIs** ready for integration
 
-"Learn exactly what you need to know, when you need to know it. BrainPatch eliminates wasted learning time by creating courses that start precisely where your knowledge ends."
+## 📁 Project Structure
 
-## Success Metrics
+```
+├── src/
+│   ├── app/                 # Next.js App Router
+│   │   ├── layout.tsx       # Root layout
+│   │   ├── page.tsx         # Home page (customizable)
+│   │   └── globals.css      # Global styles
+│   ├── components/          # Reusable components
+│   ├── lib/                 # Utilities and API functions
+│   ├── mocks/               # MSW mock handlers
+│   ├── stories/             # Storybook stories
+│   └── types/               # TypeScript type definitions
+├── public/                  # Static assets
+├── .github/workflows/       # CI/CD configuration
+└── Configuration files      # Various config files
+```
 
-### User Engagement
-- Time-to-course-completion rates
-- Module completion percentages
-- User retention and return rates
-- Assessment accuracy and user satisfaction
+## 🛠️ Development Commands
 
-### Learning Outcomes
-- Knowledge improvement scores (pre/post assessment)
-- Real-world application success rates
-- User-reported confidence improvements
-- Career advancement attributable to learning
+### Primary Development
+```bash
+npm run dev          # Start development server
+npm test             # Run tests in watch mode
+npm run coverage     # Generate test coverage report
+npm run lint         # Check code quality
+npm run lint:fix     # Auto-fix linting issues
+npm run type-check   # TypeScript type checking
+```
 
-### Product Performance
-- Assessment accuracy and relevance
-- Course personalisation effectiveness
-- LLM response quality and speed
-- Platform scalability and reliability
+### Testing
+```bash
+npm run test:run     # Run tests once (CI mode)
+npm run test:ui      # Open Vitest UI
+npm run coverage     # Generate coverage report
+```
 
-## Technical Architecture Considerations
+### Building & Deployment
+```bash
+npm run build        # Build for production
+npm run storybook    # Start Storybook
+npm run build-storybook  # Build Storybook
+```
 
-### Platform Technology
-- **Frontend Framework**: Next.js in static export mode for optimal performance and deployment flexibility
-- **Deployment Strategy**: Automatic GitHub Pages deployment with CDN distribution and static hosting
-- **CI/CD Pipeline**: Comprehensive GitHub Actions workflow with automated testing, building, and deployment
-- **Client-Side State Management**: React-based state handling for assessment flows and user progress
-- **LLM Strategy**: Multi-provider architecture with initial focus on in-browser LLM execution for privacy and offline capabilities
+### Release & Commits
+```bash
+npm run commit       # Interactive conventional commit
+npm run release:dry  # Preview release
+```
 
-### LLM Provider Architecture
-- **Initial Implementation**: In-browser LLM execution using WebAssembly/WebGPU for local processing
-- **Multi-Provider Support**: Extensible architecture supporting cloud-based providers (OpenAI, Anthropic, etc.)
-- **Privacy-First Approach**: Local processing ensures user data never leaves the device initially
-- **Fallback Strategy**: Graceful degradation from local to cloud providers based on user preference and device capabilities
+## 🔧 Configuration
 
-### Core Components
-- Knowledge assessment engine with adaptive questioning
-- Multi-provider LLM integration layer for course generation and content creation
-- User progress tracking and analytics (client-side storage with optional cloud sync)
-- Content delivery and management system
+### Template Placeholders
+The following placeholders will be replaced during setup:
 
-### Scalability Requirements
-- Support for multiple subject domains beyond ReactJS
-- Efficient LLM usage optimisation across local and cloud providers
-- Real-time assessment and course adjustment capabilities
-- Multi-user concurrent assessment and learning
-- Static export compatibility for edge deployment and offline capabilities
-- Browser-based LLM performance optimisation for resource-constrained devices
-- Seamless provider switching based on performance and availability
+**Package.json:**
+- `{{PROJECT_NAME}}` - NPM package name
+- `{{PROJECT_DESCRIPTION}}` - Project description
+- `{{REPOSITORY_URL}}` - Git repository URL
+- `{{AUTHOR_NAME}}` - Author name
+- `{{AUTHOR_EMAIL}}` - Author email
+- `{{LICENSE}}` - License type
 
-## Roadmap Vision
+**Application Content:**
+- `{{APP_NAME}}` - Application display name
+- `{{APP_DESCRIPTION}}` - Application description
+- `{{FEATURE_X_TITLE}}` - Feature titles (1-4)
+- `{{FEATURE_X_DESCRIPTION}}` - Feature descriptions (1-4)
+- `{{CTA_TITLE}}` - Call-to-action title
+- `{{CTA_DESCRIPTION}}` - Call-to-action description
+- `{{CTA_BUTTON_TEXT}}` - Button text
 
-### Phase 1 (MVP): ReactJS Mastery
-- Core assessment engine
-- Basic course generation for ReactJS topics
-- Simple progress tracking
-- User feedback collection
+### Environment Variables
+Create a `.env.local` file for local development:
+```env
+# Add your environment variables here
+NEXT_PUBLIC_APP_NAME="{{APP_NAME}}"
+```
 
-### Phase 2: Enhanced Personalisation
-- Advanced adaptive learning algorithms
-- Improved assessment accuracy
-- Multi-level course complexity
-- Performance analytics dashboard
+## 🧪 Testing Strategy
 
-### Phase 3: Domain Expansion
-- Additional programming languages and frameworks
-- Cross-domain knowledge correlation
-- Advanced learning path optimisation
-- Community and collaboration features
+### Unit Testing
+- **Vitest** configuration with React Testing Library
+- **Coverage thresholds**: 80% statements/functions/lines, 70% branches
+- **Co-located tests**: Tests next to source files
 
-### Phase 4: Enterprise & Scale
-- Team learning and management features
-- Integration with existing learning management systems
-- Advanced analytics and reporting
-- White-label solutions
+### API Mocking
+- **MSW** for realistic API mocking
+- **Handlers** for all endpoints
+- **Browser and Node** environments supported
 
-## Inspiration & Validation
+### Integration Testing
+- **MSW Provider** for development
+- **Storybook** for component testing
+- **E2E ready** structure
 
-Based on proven concepts in adaptive learning and personalised education, with inspiration from successful knowledge assessment platforms. The approach addresses the fundamental inefficiency in traditional learning: the mismatch between course content and individual knowledge levels.
-
-## Risk Mitigation
-
-### Technical Risks
-- In-browser LLM performance limitations on lower-end devices
-- LLM accuracy and consistency across different providers (local vs cloud)
-- Scalability of personalised content creation with resource constraints
-- Browser compatibility for WebAssembly/WebGPU LLM execution
-- Integration complexity with learning management systems
-
-### Market Risks
-- User adoption of AI-driven learning platforms
-- Competition from established educational technology providers
-- Maintaining engagement with adaptive content
-
-### Mitigation Strategies
-- Iterative development with continuous user feedback
-- Strong focus on MVP validation before expansion
-- Partnership opportunities with educational institutions
-- Clear differentiation through personalisation capabilities
-
-## Deployment
+## 🚀 Deployment
 
 ### Automatic Deployment
-The application is automatically deployed to GitHub Pages on every push to the main branch:
-
-1. **Quality Gates**: All tests, linting, security audits, and builds must pass
-2. **Static Export**: Next.js generates optimized static files for deployment
-3. **GitHub Pages**: Automatic deployment using GitHub Actions with custom domain support
-4. **CDN Distribution**: Global content delivery through GitHub's infrastructure
+- **GitHub Pages** deployment on main branch push
+- **Quality gates** ensure code quality
+- **Semantic versioning** with automated releases
+- **Static export** optimized for CDN
 
 ### Manual Deployment
-For local testing of the production build:
 ```bash
 npm run build    # Generate static export
-npx serve out    # Serve locally on http://localhost:3000
+npx serve out    # Test locally
 ```
 
-### Development Workflow
+## 🎨 Customization Guide
+
+### 1. Update Branding
+- Replace colors in `tailwind.config.ts`
+- Update logo in `public/` directory
+- Modify `src/app/layout.tsx` for metadata
+
+### 2. Add Features
+- Create components in `src/components/`
+- Add pages in `src/app/`
+- Update API layer in `src/lib/api.ts`
+
+### 3. Configure LLM Integration
+- Update `next.config.ts` for providers
+- Implement actual API calls in `src/lib/api.ts`
+- Replace MSW mocks with real endpoints
+
+### 4. Customize CI/CD
+- Modify `.github/workflows/ci.yml`
+- Update deployment targets
+- Configure secrets and variables
+
+## 📚 Documentation
+
+### Key Files
+- `CLAUDE.md` - AI assistant guidance
+- `CONTRIBUTING.md` - Contribution guidelines
+- `CHANGELOG.md` - Version history
+- `biome.json` - Code quality configuration
+- `vitest.config.ts` - Testing configuration
+
+### Storybook
+Component documentation and development environment:
 ```bash
-npm run dev      # Development server
-npm test         # Run tests
-npm run coverage # Generate coverage report
-npm run lint     # Check code quality
-npm run build    # Production build
+npm run storybook
 ```
 
-## Conclusion
+## 🔒 Security
 
-BrainPatch represents a significant opportunity to revolutionise personalised learning by eliminating the inefficiencies of traditional educational approaches. By focusing on individual knowledge gaps and adaptive course generation, the platform can deliver unprecedented learning efficiency and user satisfaction.
+### Built-in Security Features
+- **Dependency auditing** in CI/CD
+- **No server-side** attack vectors (static export)
+- **Privacy-first** LLM integration
+- **Secure defaults** throughout
 
-The initial focus on ReactJS provides a contained environment for validation and iteration, with clear expansion opportunities across the broader technology education market.
+### Security Commands
+```bash
+npm run security:check  # Check for vulnerabilities
+npm audit              # Dependency audit
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Create a pull request
+
+See `CONTRIBUTING.md` for detailed guidelines.
+
+## 📄 License
+
+This project is licensed under the {{LICENSE}} License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+If you encounter any issues or have questions:
+
+1. Check the documentation
+2. Search existing GitHub issues
+3. Create a new issue with detailed information
+4. Refer to `CLAUDE.md` for AI assistant guidance
+
+## 🎯 Roadmap
+
+- [ ] Add more component examples
+- [ ] Implement additional LLM providers
+- [ ] Add E2E testing setup
+- [ ] Create deployment guides
+- [ ] Add internationalization support
+
+## 🙏 Acknowledgments
+
+Built with modern web development best practices and inspired by the Next.js community. Special thanks to all contributors and the open-source ecosystem.
+
+---
+
+**Happy coding!** 🎉
