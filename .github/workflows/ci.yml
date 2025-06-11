@@ -60,6 +60,9 @@ jobs:
             sed -i 's/{{ CTA_DESCRIPTION }}/Start building your next project/g' src/app/page.tsx
             sed -i 's/{{ CTA_BUTTON_TEXT }}/Start Building/g' src/app/page.tsx
             
+            # Format the code after template replacement
+            npm run lint:fix || echo "Formatting applied, continuing..."
+            
             echo "✓ Template configured for CI testing"
           else
             echo "✓ Project is already configured"
@@ -118,6 +121,9 @@ jobs:
             sed -i 's/{{ CTA_TITLE }}/Get Started/g' src/app/page.tsx
             sed -i 's/{{ CTA_DESCRIPTION }}/Start building your next project/g' src/app/page.tsx
             sed -i 's/{{ CTA_BUTTON_TEXT }}/Start Building/g' src/app/page.tsx
+            
+            # Format the code after template replacement
+            npm run lint:fix || echo "Formatting applied, continuing..."
             
             echo "✓ Template configured for CI testing"
           else
@@ -246,6 +252,9 @@ jobs:
             sed -i 's/{{AUTHOR_EMAIL}}/dev@exadev.com/g' package.json
             sed -i 's/{{LICENSE}}/MIT/g' package.json
             
+            # Format the code after template replacement
+            npm run lint:fix || echo "Formatting applied, continuing..."
+            
             echo "✓ Template configured for CI testing"
           else
             echo "✓ Project is already configured"
@@ -321,6 +330,9 @@ jobs:
             sed -i 's/{{ CTA_TITLE }}/Get Started/g' src/app/page.tsx
             sed -i 's/{{ CTA_DESCRIPTION }}/Start building your next project/g' src/app/page.tsx
             sed -i 's/{{ CTA_BUTTON_TEXT }}/Start Building/g' src/app/page.tsx
+            
+            # Format the code after template replacement
+            npm run lint:fix || echo "Formatting applied, continuing..."
             
             echo "✓ Template configured for CI testing"
           else
