@@ -10,6 +10,7 @@
 	"author": "{{AUTHOR_NAME}} <{{AUTHOR_EMAIL}}>",
 	"license": "{{LICENSE}}",
 	"scripts": {
+		"setup": "node scripts/setup.js",
 		"dev": "next dev",
 		"msw:init": "msw init public/ --save",
 		"build": "next build",
