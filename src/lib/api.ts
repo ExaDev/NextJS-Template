@@ -1,4 +1,5 @@
-// API service functions that work with MSW mocks
+// Generic API service functions that work with MSW mocks
+// Replace with your application-specific API functions
 
 interface ChatMessage {
 	role: 'user' | 'assistant' | 'system';
