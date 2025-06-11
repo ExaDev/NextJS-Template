@@ -45,20 +45,20 @@ jobs:
             sed -i 's/{{AUTHOR_EMAIL}}/dev@exadev.com/g' package.json
             sed -i 's/{{LICENSE}}/MIT/g' package.json
             
-            # Setup React component placeholders
-            sed -i 's/{{APP_NAME}}/Next.js Template/g' src/app/page.tsx
-            sed -i 's/{{APP_DESCRIPTION}}/A production-ready Next.js template/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_1_TITLE}}/Modern Development/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_1_DESCRIPTION}}/Built with the latest Next.js and React/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_2_TITLE}}/Type Safety/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_2_DESCRIPTION}}/Full TypeScript support/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_3_TITLE}}/Testing Ready/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_3_DESCRIPTION}}/Comprehensive testing setup/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_4_TITLE}}/CI\/CD Pipeline/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_4_DESCRIPTION}}/Automated testing and deployment/g' src/app/page.tsx
-            sed -i 's/{{CTA_TITLE}}/Get Started/g' src/app/page.tsx
-            sed -i 's/{{CTA_DESCRIPTION}}/Start building your next project/g' src/app/page.tsx
-            sed -i 's/{{CTA_BUTTON_TEXT}}/Start Building/g' src/app/page.tsx
+            # Setup React component placeholders (note the spaces in templates)
+            sed -i 's/{{ APP_NAME }}/Next.js Template/g' src/app/page.tsx
+            sed -i 's/{{ APP_DESCRIPTION }}/A production-ready Next.js template/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_1_TITLE }}/Modern Development/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_1_DESCRIPTION }}/Built with the latest Next.js and React/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_2_TITLE }}/Type Safety/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_2_DESCRIPTION }}/Full TypeScript support/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_3_TITLE }}/Testing Ready/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_3_DESCRIPTION }}/Comprehensive testing setup/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_4_TITLE }}/CI\/CD Pipeline/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_4_DESCRIPTION }}/Automated testing and deployment/g' src/app/page.tsx
+            sed -i 's/{{ CTA_TITLE }}/Get Started/g' src/app/page.tsx
+            sed -i 's/{{ CTA_DESCRIPTION }}/Start building your next project/g' src/app/page.tsx
+            sed -i 's/{{ CTA_BUTTON_TEXT }}/Start Building/g' src/app/page.tsx
             
             echo "✓ Template configured for CI testing"
           else
@@ -104,20 +104,20 @@ jobs:
             sed -i 's/{{AUTHOR_EMAIL}}/dev@exadev.com/g' package.json
             sed -i 's/{{LICENSE}}/MIT/g' package.json
             
-            # Setup React component placeholders
-            sed -i 's/{{APP_NAME}}/Next.js Template/g' src/app/page.tsx
-            sed -i 's/{{APP_DESCRIPTION}}/A production-ready Next.js template/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_1_TITLE}}/Modern Development/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_1_DESCRIPTION}}/Built with the latest Next.js and React/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_2_TITLE}}/Type Safety/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_2_DESCRIPTION}}/Full TypeScript support/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_3_TITLE}}/Testing Ready/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_3_DESCRIPTION}}/Comprehensive testing setup/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_4_TITLE}}/CI\/CD Pipeline/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_4_DESCRIPTION}}/Automated testing and deployment/g' src/app/page.tsx
-            sed -i 's/{{CTA_TITLE}}/Get Started/g' src/app/page.tsx
-            sed -i 's/{{CTA_DESCRIPTION}}/Start building your next project/g' src/app/page.tsx
-            sed -i 's/{{CTA_BUTTON_TEXT}}/Start Building/g' src/app/page.tsx
+            # Setup React component placeholders (note the spaces in templates)
+            sed -i 's/{{ APP_NAME }}/Next.js Template/g' src/app/page.tsx
+            sed -i 's/{{ APP_DESCRIPTION }}/A production-ready Next.js template/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_1_TITLE }}/Modern Development/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_1_DESCRIPTION }}/Built with the latest Next.js and React/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_2_TITLE }}/Type Safety/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_2_DESCRIPTION }}/Full TypeScript support/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_3_TITLE }}/Testing Ready/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_3_DESCRIPTION }}/Comprehensive testing setup/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_4_TITLE }}/CI\/CD Pipeline/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_4_DESCRIPTION }}/Automated testing and deployment/g' src/app/page.tsx
+            sed -i 's/{{ CTA_TITLE }}/Get Started/g' src/app/page.tsx
+            sed -i 's/{{ CTA_DESCRIPTION }}/Start building your next project/g' src/app/page.tsx
+            sed -i 's/{{ CTA_BUTTON_TEXT }}/Start Building/g' src/app/page.tsx
             
             echo "✓ Template configured for CI testing"
           else
@@ -307,20 +307,20 @@ jobs:
             sed -i 's/{{AUTHOR_EMAIL}}/dev@exadev.com/g' package.json
             sed -i 's/{{LICENSE}}/MIT/g' package.json
             
-            # Setup React component placeholders
-            sed -i 's/{{APP_NAME}}/Next.js Template/g' src/app/page.tsx
-            sed -i 's/{{APP_DESCRIPTION}}/A production-ready Next.js template/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_1_TITLE}}/Modern Development/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_1_DESCRIPTION}}/Built with the latest Next.js and React/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_2_TITLE}}/Type Safety/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_2_DESCRIPTION}}/Full TypeScript support/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_3_TITLE}}/Testing Ready/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_3_DESCRIPTION}}/Comprehensive testing setup/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_4_TITLE}}/CI\/CD Pipeline/g' src/app/page.tsx
-            sed -i 's/{{FEATURE_4_DESCRIPTION}}/Automated testing and deployment/g' src/app/page.tsx
-            sed -i 's/{{CTA_TITLE}}/Get Started/g' src/app/page.tsx
-            sed -i 's/{{CTA_DESCRIPTION}}/Start building your next project/g' src/app/page.tsx
-            sed -i 's/{{CTA_BUTTON_TEXT}}/Start Building/g' src/app/page.tsx
+            # Setup React component placeholders (note the spaces in templates)
+            sed -i 's/{{ APP_NAME }}/Next.js Template/g' src/app/page.tsx
+            sed -i 's/{{ APP_DESCRIPTION }}/A production-ready Next.js template/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_1_TITLE }}/Modern Development/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_1_DESCRIPTION }}/Built with the latest Next.js and React/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_2_TITLE }}/Type Safety/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_2_DESCRIPTION }}/Full TypeScript support/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_3_TITLE }}/Testing Ready/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_3_DESCRIPTION }}/Comprehensive testing setup/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_4_TITLE }}/CI\/CD Pipeline/g' src/app/page.tsx
+            sed -i 's/{{ FEATURE_4_DESCRIPTION }}/Automated testing and deployment/g' src/app/page.tsx
+            sed -i 's/{{ CTA_TITLE }}/Get Started/g' src/app/page.tsx
+            sed -i 's/{{ CTA_DESCRIPTION }}/Start building your next project/g' src/app/page.tsx
+            sed -i 's/{{ CTA_BUTTON_TEXT }}/Start Building/g' src/app/page.tsx
             
             echo "✓ Template configured for CI testing"
           else

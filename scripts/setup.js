@@ -129,8 +129,11 @@ function replaceInFile(filePath, replacements) {
 	let content = fs.readFileSync(filePath, 'utf8');
 
 	for (const [placeholder, value] of Object.entries(replacements)) {
-		const regex = new RegExp(`{{${placeholder}}}`, 'g');
-		content = content.replace(regex, value);
+		// Handle both formats: {{ PLACEHOLDER }} and {{PLACEHOLDER}}
+		const regexWithSpaces = new RegExp(`{{ ${placeholder} }}`, 'g');
+		const regexWithoutSpaces = new RegExp(`{{${placeholder}}}`, 'g');
+		content = content.replace(regexWithSpaces, value);
+		content = content.replace(regexWithoutSpaces, value);
 	}
 
 	fs.writeFileSync(filePath, content, 'utf8');
