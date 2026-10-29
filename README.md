@@ -1,5 +1,7 @@
 # {{PROJECT_NAME}} - Next.js Template
 
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/ExaDev/NextJS-Template) [![CI](https://img.shields.io/github/actions/workflow/status/ExaDev/NextJS-Template/ci.yml?branch=main)](https://github.com/ExaDev/NextJS-Template/actions)
+
 ![Coverage](https://img.shields.io/badge/coverage-84.21%25-yellow.svg)
 
 ## Overview
